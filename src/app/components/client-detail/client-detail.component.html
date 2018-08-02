@@ -1,0 +1,91 @@
+<div class="ui-g-11">
+    <p-card styleClass="ui-card-shadow">
+        <div class="autoComplete-styles">
+            <p-autoComplete 
+            [(ngModel)]="patient" 
+            [suggestions]="filteredPatients" 
+            (completeMethod)="filterPatients($event)" 
+            field="name" 
+            [size]="30"
+            placeholder="Search Patient" 
+            [minLength]="1" 
+            (onSelect)="onSelect()"></p-autoComplete> 
+        </div>
+        <p-table>
+            <ng-template pTemplate="header" class="ui-g-12">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Title</th>
+                    <th>Medical Aid Number</th>
+                    <th>Auth Number</th>
+                    <th>ID Number</th>
+                </tr> 
+                <tr>
+                    <td>
+                        <div>
+                            <div class="ui-fluid">
+                                <input type="text" pInputText 
+                                [(ngModel)]="firstName"
+                                (keyup)="checkValidation()"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <div class="ui-fluid">
+                                <input type="text" pInputText 
+                                [(ngModel)]="lastName"
+                                (keyup)="checkValidation()"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <div class="ui-fluid">
+                                <input type="text" pInputText 
+                                [(ngModel)]="title"
+                                (keyup)="checkValidation()"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui-fluid">
+                            <input type="text" pInputText 
+                            [(ngModel)]="medAidNumber"
+                            (keyup)="checkValidation()"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui-fluid">
+                            <input type="text" pInputText 
+                            [(ngModel)]="authNumber"
+                            (keyup)="checkValidation()"/>
+                        </div>
+                        
+                    </td>
+                    <td>
+                        <div class="ui-fluid">
+                            <input type="text" pInputText 
+                            [(ngModel)]="idNumber"
+                            (keyup)="checkValidation()"/> 
+                        </div>
+                    </td>
+                </tr>
+                <div>
+                </div> 
+            </ng-template>   
+        </p-table>
+        <p-footer>
+            <button pButton type="button" 
+            [disabled]="!patientSelected" 
+            (click)="enterNewPatientDetails()" 
+            label="Select" 
+            icon="pi pi-check" 
+            style="margin-right: .25em"></button>
+        </p-footer>
+    </p-card>
+</div>
+
+
+

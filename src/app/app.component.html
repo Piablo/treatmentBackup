@@ -1,0 +1,64 @@
+<span class="ui-g">
+    <div class="ui-g-12 ui-g-nopad">
+        <p-card title="Company Details" 
+        subtitle="Treatment Protocol Form" 
+        [style]="{'background-color':'rgb(60, 60, 60)', 
+        'color':'rgb(35, 153, 229)', 
+        'border-color': 'rgb(80,80,80)',
+        'height':'17vh'}">
+    </p-card>
+    <p-header></p-header>
+</div>
+<div class="ui-g-3 ui-g-nopad">
+    <p-card subtitle="Treatment Protocol"
+    [style]="{'background-color':'rgb(225, 225, 225)', 
+    'margin-top': '5px',
+    'height':'83vh'}">
+    
+    <p-scrollPanel [style]="{width: '100%', 
+    
+    'background-color':'rgb(245, 245, 245)', 
+    'height': '73vh'}">
+    <p-table [value]="treatmentProtocols">
+        <ng-template pTemplate="header">
+        </ng-template>
+        <ng-template pTemplate="body" let-tp>
+            <tr>
+                <td (click)="editProtocol(tp.protocolId)">{{tp.protocolId}} - {{tp.patientName}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-scrollPanel>
+
+</p-card>
+
+</div>
+<div class="ui-g-9 ui-g-nopad">
+    
+    <p-card  
+    [style]="{
+        'border-color': 'white',
+        'margin-top': '5px',
+        'margin-left': '5px',
+        'height': '83vh'}" 
+        subtitle="Enter Patient Details">
+        
+        <p-scrollPanel [style]="{width: '100%', 
+        'border-color': 'white',
+        'height': '65vh'}">
+        <div *ngIf="patientSearch">
+            <app-client-detail (addMedicationInfo)="addMedicationInfo($event)"></app-client-detail>
+        </div>
+        <div *ngIf="!patientSearch">
+            <app-product [patientModel]="patientModel" (addItem)="addItem($event)"></app-product>
+        </div>
+    </p-scrollPanel>
+    
+    <p-footer>
+        <button pButton type="button" (click)="submitProtocol()" icon="pi pi-check" iconPos="right" label="Submit"></button>
+        <button pButton type="button" (click)="getTestData()" icon="pi pi-check" iconPos="right" label="TestData"></button>
+    </p-footer>
+</p-card>
+
+</div>
+</span>

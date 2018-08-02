@@ -1,0 +1,101 @@
+<div class="ui-g-11">
+  <p-card styleClass="ui-card-shadow">
+    <p-table [value]="patients">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Title</th>
+          <th>Medical Aid Number</th>
+          <th>Auth Number</th>
+          <th>ID Number</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-patient>
+        <tr>
+          <td>{{patient.firstName}}</td>
+          <td>{{patient.lastName}}</td>
+          <td>{{patient.title}}</td>
+          <td>{{patient.medAidNum}}</td>
+          <td>{{patient.authNumber}}</td>
+          <td>{{patient.id}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <p-card  [style]="{'background-color':'rgb(225, 225, 225)'}">
+        <div class="autoComplete-styles">
+            <p-autoComplete 
+            [(ngModel)]="product" 
+            [suggestions]="filteredProducts" 
+            (completeMethod)="filterProducts($event)" 
+            field="fullName" 
+            [size]="30"
+            placeholder="Search product" 
+            [minLength]="1" 
+            (onSelect)="onSelect()"></p-autoComplete> 
+        </div>
+
+      <p-table [value]="products">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nappi</th>
+            <th>Product</th>
+            <th>Dosage</th>
+            <th>Frequency</th>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <div class="ui-fluid">
+                  <input type="text" pInputText 
+                  [(ngModel)]="nappi"/>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div>
+                <div class="ui-fluid">
+                  <input type="text" pInputText 
+                  [(ngModel)]="productName"/>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="ui-fluid">
+                <input type="text" pInputText 
+                [(ngModel)]="dosage"
+                (keyup)="checkComponentState()"/>
+              </div>
+            </td>
+            <td>
+              <div class="ui-fluid">
+                <input type="text" pInputText 
+                [(ngModel)]="frequency"
+                (keyup)="checkComponentState()"/>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{product.nappi}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.dosage}}</td>
+            <td>{{product.frequency}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <p-footer>
+        <button pButton type="button" 
+        (click)="saveProduct()" 
+        [disabled]="disableAddButton"
+        label="Add" 
+        icon="pi pi-check" 
+        style="margin-right: .25em"></button>
+      </p-footer>
+    </p-card>
+  </p-card>
+</div>
+
+
+

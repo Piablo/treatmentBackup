@@ -1,0 +1,48 @@
+[
+    {
+      "PersonID": 0,
+      "FirstName": "string",
+      "Surname": "string",
+      "IDNumber": "string",
+      "UnisolveProfileNumber": "string",
+      "MedicalAidName": "string",
+      "MedicalAidNumber": "string",
+      "TreatmentProtocols": [
+        {
+          "TreatmentProtocolID": 0,
+          "ValidFromDate": "string",
+          "ValidToDate": "string",
+          "TransactionDate": "string",
+          "PersonID": 0,
+          "ProductID": 0,
+          "TreatmentProtocolPerson": {
+            "PersonID": 0,
+            "FirstName": "string",
+            "Surname": "string",
+            "IDNumber": "string",
+            "UnisolveProfileNumber": "whats this",
+            "MedicalAidName": "string",
+            "MedicalAidNumber": "string",
+            "TreatmentProtocols": [
+              {}
+            ]
+          },
+          "TreatmentProtocolProduct": {
+            "ProductID": 0,
+            "Nappi": "string",
+            "Description": "string",
+            "Dosage": 0,
+            "Frequency": 0,
+            "CycleLength": 0,
+            "NumberOfCycles": 0,
+            "Active": "string",
+            "SEPExclVat": 0,
+            "UnitSEPExclVat": 0,
+            "TreatmentProtocols": [
+              {}
+            ]
+          }
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,19 @@
+{
+    "data": [ 
+        {
+            "nappi": "1111",
+            "fullName": "Product 1 - 1111",
+            "productName": "Product 1"
+        }, 
+        {
+            "nappi": "2222",
+            "fullName": "Product 2 - 2222",
+            "productName": "Product 2"
+        }, 
+        {
+            "nappi": "3333",
+            "fullName": "Product 3 - 333",
+            "productName": "Product 3"
+        }
+    ]
+}

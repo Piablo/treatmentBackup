@@ -1,0 +1,31 @@
+{
+    "data": [ 
+        {
+            "title": "Mr",
+            "firstName": "Brandon", 
+            "lastName": "Flowers", 
+            "name": "Mr Brandon Flowers", 
+            "medAidNum": "1111111", 
+            "authNumber": "1111", 
+            "id": "8207075112089"
+        }, 
+        {
+            "title": "Mrs",
+            "firstName": "Jane", 
+            "lastName": "Doe", 
+            "name": "Mrs Jane Doe", 
+            "medAidNum": "2222222", 
+            "authNumber": "2222", 
+            "id": "8207075112089"
+        }, 
+        {
+            "title": "Miss",
+            "firstName": "Molly", 
+            "lastName": "Wolly", 
+            "name": "Miss Molly Wolly", 
+            "medAidNum": "3333333", 
+            "authNumber": "3333", 
+            "id": "8207075112089"
+        }
+    ]
+}
