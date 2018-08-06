@@ -22,6 +22,7 @@ export class PatientService {
 
   treatmentProtocolPerson: TreatmentProtocolPerson;
   
+  
   getPatients(url) {
     return this.http.get(url)
     .toPromise()
